@@ -1,8 +1,11 @@
 import axios from 'axios';
 
-// Use explicit localhost URL for API calls
+// Use environment variable for API base URL
+// For production: Set VITE_API_URL=https://your-backend-url.com/api in Vercel
+const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000/api';
+
 const api = axios.create({
-  baseURL: 'http://localhost:5000/api',
+  baseURL: API_URL,
   headers: {
     'Content-Type': 'application/json'
   }
