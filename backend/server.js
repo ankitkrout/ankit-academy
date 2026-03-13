@@ -21,7 +21,7 @@ const notificationRoutes = require('./routes/notifications');
 const badgeRoutes = require('./routes/badges');
 const profileRoutes = require('./routes/profile');
 const analyticsRoutes = require('./routes/analytics');
-
+const googleAuthRoutes = require('./routes/googleAuth');
 
 // Load environment variables
 dotenv.config();
@@ -77,6 +77,7 @@ app.use('/api/notifications', notificationRoutes);
 app.use('/api/badges', badgeRoutes);
 app.use('/api/profile', profileRoutes);
 app.use('/api/analytics', analyticsRoutes);
+app.use('/api/auth/google', googleAuthRoutes);
 
 
 // Health check route

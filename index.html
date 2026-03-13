@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AnkitLearn - Interactive Coaching Platform</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="images/favicon.ico">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <div class="logo-icon">
+                    <i class="fas fa-graduation-cap"></i>
+                </div>
+                <span>Ankit<span class="logo-accent">Learn</span></span>
+            </a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="classes.html">Classes</a></li>
+                <li><a href="material.html">Study Material</a></li>
+                <li><a href="leaderboard.html">Leaderboard</a></li>
+                <li><a href="discussion.html">Doubt Forum</a></li>
+            </ul>
+            <div class="nav-actions">
+                <button class="theme-toggle" id="themeToggle" title="Toggle Dark Mode">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <div class="search-box">
+                    <input type="text" placeholder="Search..." id="searchInput">
+                    <button><i class="fas fa-search"></i></button>
+                </div>
+                <a href="login.html" class="btn btn-outline">Login</a>
+                <a href="login.html?tab=signup" class="btn btn-primary">Sign Up</a>
+                <button class="mobile-menu" id="mobileMenu">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-bg">
+            <div class="hero-shape shape-1"></div>
+            <div class="hero-shape shape-2"></div>
+            <div class="hero-shape shape-3"></div>
+        </div>
+        <div class="hero-content">
+            <div class="hero-badge">
+                <i class="fas fa-star"></i>
+                <span>#1 Learning Platform</span>
+            </div>
+            <h1>Learn from <span class="gradient-text">Class 8 to 12</span><br>With Expert Mentors</h1>
+            <p>Master every subject with video lectures, interactive quizzes, and personalized learning paths. Join thousands of students achieving their dreams.</p>
+            <div class="hero-buttons">
+                <a href="classes.html" class="btn btn-primary btn-lg">
+                    <i class="fas fa-play"></i> Start Learning
+                </a>
+                <a href="#features" class="btn btn-outline btn-lg">
+                    <i class="fas fa-info-circle"></i> Learn More
+                </a>
+            </div>
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <span class="stat-number" data-target="50000">0</span>
+                    <span class="stat-label">Students</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number" data-target="500">0</span>
+                    <span class="stat-label">Courses</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number" data-target="100">0</span>
+                    <span class="stat-label">Expert Teachers</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number" data-target="2000">0</span>
+                    <span class="stat-label">Chapters</span>
+                </div>
+            </div>
+        </div>
+        <div class="hero-visual">
+            <div class="floating-card card-1">
+                <i class="fas fa-video"></i>
+                <span>Video Lectures</span>
+            </div>
+            <div class="floating-card card-2">
+                <i class="fas fa-tasks"></i>
+                <span>Practice Quiz</span>
+            </div>
+            <div class="floating-card card-3">
+                <i class="fas fa-certificate"></i>
+                <span>Get Certified</span>
+            </div>
+            <div class="hero-image">
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 400'%3E%3Cdefs%3E%3ClinearGradient id='grad' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%233b82f6'/%3E%3Cstop offset='100%25' style='stop-color:%231e40af'/%3E%3C/linearGradient%3E%3C/defs%3E%3Ccircle cx='200' cy='200' r='180' fill='url(%23grad)'/%3E%3Ctext x='200' y='180' text-anchor='middle' fill='white' font-size='80' font-family='Arial'%3E📚%3C/text%3E%3Ctext x='200' y='250' text-anchor='middle' fill='white' font-size='24' font-family='Arial'%3EAnkitLearn%3C/text%3E%3C/svg%3E" alt="Hero Image">
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features" id="features">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Why Choose Us</span>
+                <h2>Everything You Need to Excel</h2>
+                <p>Our platform provides all the tools for your academic success</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-video"></i>
+                    </div>
+                    <h3>Video Lectures</h3>
+                    <p>High-quality video lectures from expert teachers covering all topics in detail.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h3>Interactive Quizzes</h3>
+                    <p>Test your knowledge with MCQ quizzes and track your progress over time.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-file-download"></i>
+                    </div>
+                    <h3>Download Notes</h3>
+                    <p>Get access to downloadable PDF notes for every chapter to study offline.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-comments"></i>
+                    </div>
+                    <h3>Doubt Solving</h3>
+                    <p>Ask questions and get answers from teachers and peers in our discussion forum.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-trophy"></i>
+                    </div>
+                    <h3>Leaderboard</h3>
+                    <p>Compete with fellow students and climb the ranks to become a top learner.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-award"></i>
+                    </div>
+                    <h3>Certificates</h3>
+                    <p>Earn certificates upon course completion to showcase your achievements.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Popular Subjects -->
+    <section class="subjects">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Popular Subjects</span>
+                <h2>Explore Our Subjects</h2>
+                <p>Choose from a wide range of subjects across all classes</p>
+            </div>
+            <div class="subjects-grid">
+                <a href="subjects.html?class=8" class="subject-card">
+                    <div class="subject-icon" style="background: linear-gradient(135deg, #3b82f6, #1e40af);">
+                        <i class="fas fa-calculator"></i>
+                    </div>
+                    <h3>Mathematics</h3>
+                    <p>50+ Chapters</p>
+                </a>
+                <a href="subjects.html?class=8" class="subject-card">
+                    <div class="subject-icon" style="background: linear-gradient(135deg, #10b981, #059669);">
+                        <i class="fas fa-flask"></i>
+                    </div>
+                    <h3>Science</h3>
+                    <p>45+ Chapters</p>
+                </a>
+                <a href="subjects.html?class=8" class="subject-card">
+                    <div class="subject-icon" style="background: linear-gradient(135deg, #f97316, #ea580c);">
+                        <i class="fas fa-language"></i>
+                    </div>
+                    <h3>English</h3>
+                    <p>40+ Chapters</p>
+                </a>
+                <a href="subjects.html?class=8" class="subject-card">
+                    <div class="subject-icon" style="background: linear-gradient(135deg, #8b5cf6, #7c3aed);">
+                        <i class="fas fa-globe"></i>
+                    </div>
+                    <h3>Social Science</h3>
+                    <p>35+ Chapters</p>
+                </a>
+                <a href="subjects.html?class=8" class="subject-card">
+                    <div class="subject-icon" style="background: linear-gradient(135deg, #06b6d4, #0891b2);">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                    <h3>Computer</h3>
+                    <p>30+ Chapters</p>
+                </a>
+                <a href="subjects.html?class=11" class="subject-card">
+                    <div class="subject-icon" style="background: linear-gradient(135deg, #ec4899, #db2777);">
+                        <i class="fas fa-atom"></i>
+                    </div>
+                    <h3>Physics</h3>
+                    <p>25+ Chapters</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Courses -->
+    <section class="courses">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Featured Courses</span>
+                <h2>Popular Courses</h2>
+                <p>Start learning with our most popular courses</p>
+            </div>
+            <div class="courses-grid">
+                <div class="course-card">
+                    <div class="course-image">
+                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='250'%3E%3Crect fill='%233b82f6' width='400' height='250'/%3E%3Ctext x='200' y='140' text-anchor='middle' fill='white' font-size='50'%3E📐%3C/text%3E%3C/svg%3E" alt="Math Course">
+                        <span class="course-badge">Bestseller</span>
+                    </div>
+                    <div class="course-content">
+                        <div class="course-meta">
+                            <span><i class="fas fa-book"></i> Mathematics</span>
+                            <span><i class="fas fa-clock"></i> 20 Hours</span>
+                        </div>
+                        <h3>Complete Mathematics for Class 10</h3>
+                        <p>Master algebra, geometry, trigonometry and more with expert guidance.</p>
+                        <div class="course-instructor">
+                            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40'%3E%3Ccircle cx='20' cy='20' r='20' fill='%231e40af'/%3E%3Ctext x='20' y='26' text-anchor='middle' fill='white' font-size='16'%3EA%3C/text%3E%3C/svg%3E" alt="Teacher">
+                            <span>Ankit Sir</span>
+                        </div>
+                        <div class="course-footer">
+                            <div class="course-rating">
+                                <i class="fas fa-star"></i>
+                                <span>4.8</span>
+                                <span class="rating-count">(1.2k)</span>
+                            </div>
+                            <a href="chapters.html?course=math10" class="btn btn-primary">Enroll Now</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="course-card">
+                    <div class="course-image">
+                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='250'%3E%3Crect fill='%2310b981' width='400' height='250'/%3E%3Ctext x='200' y='140' text-anchor='middle' fill='white' font-size='50'%3E🔬%3C/text%3E%3C/svg%3E" alt="Science Course">
+                    </div>
+                    <div class="course-content">
+                        <div class="course-meta">
+                            <span><i class="fas fa-book"></i> Science</span>
+                            <span><i class="fas fa-clock"></i> 25 Hours</span>
+                        </div>
+                        <h3>Complete Science for Class 9</h3>
+                        <p>Learn physics, chemistry, and biology with interactive experiments.</p>
+                        <div class="course-instructor">
+                            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40'%3E%3Ccircle cx='20' cy='20' r='20' fill='%2310b981'/%3E%3Ctext x='20' y='26' text-anchor='middle' fill='white' font-size='16'%3ES%3C/text%3E%3C/svg%3E" alt="Teacher">
+                            <span>Sarah Mam</span>
+                        </div>
+                        <div class="course-footer">
+                            <div class="course-rating">
+                                <i class="fas fa-star"></i>
+                                <span>4.9</span>
+                                <span class="rating-count">(800)</span>
+                            </div>
+                            <a href="chapters.html?course=science9" class="btn btn-primary">Enroll Now</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="course-card">
+                    <div class="course-image">
+                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='250'%3E%3Crect fill='%23f97316' width='400' height='250'/%3E%3Ctext x='200' y='140' text-anchor='middle' fill='white' font-size='50'%3E💻%3C/text%3E%3C/svg%3E" alt="Computer Course">
+                        <span class="course-badge">New</span>
+                    </div>
+                    <div class="course-content">
+                        <div class="course-meta">
+                            <span><i class="fas fa-book"></i> Computer</span>
+                            <span><i class="fas fa-clock"></i> 15 Hours</span>
+                        </div>
+                        <h3>Python Programming for Class 11</h3>
+                        <p>Learn Python from scratch with hands-on coding exercises.</p>
+                        <div class="course-instructor">
+                            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40'%3E%3Ccircle cx='20' cy='20' r='20' fill='%23f97316'/%3E%3Ctext x='20' y='26' text-anchor='middle' fill='white' font-size='16'%3ER%3C/text%3E%3C/svg%3E" alt="Teacher">
+                            <span>Rajesh Sir</span>
+                        </div>
+                        <div class="course-footer">
+                            <div class="course-rating">
+                                <i class="fas fa-star"></i>
+                                <span>4.7</span>
+                                <span class="rating-count">(600)</span>
+                            </div>
+                            <a href="chapters.html?course=python11" class="btn btn-primary">Enroll Now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="view-all">
+                <a href="classes.html" class="btn btn-outline">View All Courses <i class="fas fa-arrow-right"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Teachers Section -->
+    <section class="teachers">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Expert Faculty</span>
+                <h2>Our Top Teachers</h2>
+                <p>Learn from the best educators in the industry</p>
+            </div>
+            <div class="teachers-grid">
+                <div class="teacher-card">
+                    <div class="teacher-image">
+                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='150' height='150'%3E%3Ccircle cx='75' cy='75' r='75' fill='%233b82f6'/%3E%3Ctext x='75' y='90' text-anchor='middle' fill='white' font-size='50'%3E👨%3C/text%3E%3C/svg%3E" alt="Teacher">
+                    </div>
+                    <h3>Ankit Kumar</h3>
+                    <p class="teacher-subject">Mathematics Expert</p>
+                    <p class="teacher-desc">10+ years experience in teaching Mathematics for Classes 8-12</p>
+                    <div class="teacher-stats">
+                        <span><i class="fas fa-users"></i> 15,000+ Students</span>
+                        <span><i class="fas fa-star"></i> 4.9 Rating</span>
+                    </div>
+                </div>
+                <div class="teacher-card">
+                    <div class="teacher-image">
+                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='150' height='150'%3E%3Ccircle cx='75' cy='75' r='75' fill='%2310b981'/%3E%3Ctext x='75' y='90' text-anchor='middle' fill='white' font-size='50'%3E👩%3C/text%3E%3C/svg%3E" alt="Teacher">
+                    </div>
+                    <h3>Dr. Sarah Johnson</h3>
+                    <p class="teacher-subject">Science Expert</p>
+                    <p class="teacher-desc">PhD in Physics, teaching Science for 8 years</p>
+                    <div class="teacher-stats">
+                        <span><i class="fas fa-users"></i> 12,000+ Students</span>
+                        <span><i class="fas fa-star"></i> 4.8 Rating</span>
+                    </div>
+                </div>
+                <div class="teacher-card">
+                    <div class="teacher-image">
+                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='150' height='150'%3E%3Ccircle cx='75' cy='75' r='75' fill='%23f97316'/%3E%3Ctext x='75' y='90' text-anchor='middle' fill='white' font-size='50'%3E👨%3C/text%3E%3C/svg%3E" alt="Teacher">
+                    </div>
+                    <h3>Rajesh Kumar</h3>
+                    <p class="teacher-subject">Computer Science</p>
+                    <p class="teacher-desc">Software Engineer with 5+ years teaching experience</p>
+                    <div class="teacher-stats">
+                        <span><i class="fas fa-users"></i> 10,000+ Students</span>
+                        <span><i class="fas fa-star"></i> 4.7 Rating</span>
+                    </div>
+                </div>
+                <div class="teacher-card">
+                    <div class="teacher-image">
+                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='150' height='150'%3E%3Ccircle cx='75' cy='75' r='75' fill='%238b5cf6'/%3E%3Ctext x='75' y='90' text-anchor='middle' fill='white' font-size='50'%3E👩%3C/text%3E%3C/svg%3E" alt="Teacher">
+                    </div>
+                    <h3>Priya Sharma</h3>
+                    <p class="teacher-subject">English Expert</p>
+                    <p class="teacher-desc">Literature graduate with excellent communication skills</p>
+                    <div class="teacher-stats">
+                        <span><i class="fas fa-users"></i> 8,000+ Students</span>
+                        <span><i class="fas fa-star"></i> 4.9 Rating</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Testimonials</span>
+                <h2>What Students Say</h2>
+                <p>Hear from our successful students</p>
+            </div>
+            <div class="testimonials-slider">
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <i class="fas fa-quote-left"></i>
+                        <p>AnkitLearn helped me score 95% in my Class 10 board exams. The video lectures are amazing and the quiz tests really helped me practice.</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60'%3E%3Ccircle cx='30' cy='30' r='30' fill='%233b82f6'/%3E%3Ctext x='30' y='36' text-anchor='middle' fill='white' font-size='20'%3EA%3C/text%3E%3C/svg%3E" alt="Student">
+                        <div>
+                            <h4>Amit Kumar</h4>
+                            <p>Class 10 Student - 95%</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <i class="fas fa-quote-left"></i>
+                        <p>The doubt clearing forum is fantastic. I can ask questions anytime and get quick responses from teachers. Highly recommended!</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60'%3E%3Ccircle cx='30' cy='30' r='30' fill='%2310b981'/%3E%3Ctext x='30' y='36' text-anchor='middle' fill='white' font-size='20'%3EP%3C/text%3E%3C/svg%3E" alt="Student">
+                        <div>
+                            <h4>Priya Singh</h4>
+                            <p>Class 12 Student - 94%</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <i class="fas fa-quote-left"></i>
+                        <p>I love the leaderboard feature! It motivates me to study harder and compete with other students. The certificates are a great bonus.</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60'%3E%3Ccircle cx='30' cy='30' r='30' fill='%23f97316'/%3E%3Ctext x='30' y='36' text-anchor='middle' fill='white' font-size='20'%3ER%3C/text%3E%3C/svg%3E" alt="Student">
+                        <div>
+                            <h4>Rahul Verma</h4>
+                            <p>Class 11 Student - 92%</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-dots">
+                <span class="dot active"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Ready to Start Learning?</h2>
+                <p>Join thousands of students already learning on AnkitLearn. Start your journey to success today!</p>
+                <div class="cta-buttons">
+                    <a href="login.html?tab=signup" class="btn btn-primary btn-lg">
+                        <i class="fas fa-user-plus"></i> Get Started Free
+                    </a>
+                    <a href="classes.html" class="btn btn-outline btn-lg">
+                        <i class="fas fa-compass"></i> Explore Courses
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <a href="index.html" class="logo">
+                        <div class="logo-icon">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <span>Ankit<span class="logo-accent">Learn</span></span>
+                    </a>
+                    <p>The leading online learning platform for students from Class 8 to 12. Learn from expert teachers and achieve your dreams.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="classes.html">Classes</a></li>
+                        <li><a href="material.html">Study Material</a></li>
+                        <li><a href="leaderboard.html">Leaderboard</a></li>
+                        <li><a href="discussion.html">Doubt Forum</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Subjects</h4>
+                    <ul>
+                        <li><a href="subjects.html?class=8">Mathematics</a></li>
+                        <li><a href="subjects.html?class=8">Science</a></li>
+                        <li><a href="subjects.html?class=8">English</a></li>
+                        <li><a href="subjects.html?class=11">Physics</a></li>
+                        <li><a href="subjects.html?class=11">Chemistry</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact Us</h4>
+                    <ul class="contact-info">
+                        <li><i class="fas fa-envelope"></i> support@ankitlearn.com</li>
+                        <li><i class="fas fa-phone"></i> +91 1234567890</li>
+                        <li><i class="fas fa-map-marker-alt"></i> New Delhi, India</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 AnkitLearn. All rights reserved. Made with <i class="fas fa-heart"></i> for students.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Toast Notification -->
+    <div class="toast" id="toast">
+        <i class="fas fa-check-circle"></i>
+        <span id="toastMessage">Message</span>
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
+

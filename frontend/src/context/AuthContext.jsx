@@ -82,8 +82,27 @@ export const AuthProvider = ({ children }) => {
     localStorage.setItem('user', JSON.stringify(updatedUser));
   };
 
+  const googleLogin = async (credentialResponse) => {
+    try {
+      const response = await api.post('/auth/google', {
+        idToken: credentialResponse.credential
+      });
+      
+      const { token, user: userData } = response.data;
+      
+      localStorage.setItem('token', token);
+      localStorage.setItem('user', JSON.stringify(userData));
+      
+      setUser(userData);
+      
+      return response.data;
+    } catch (error) {
+      throw error;
+    }
+  };
+
   return (
-    <AuthContext.Provider value={{ user, loading, login, register, logout, updateUser }}>
+    <AuthContext.Provider value={{ user, loading, login, register, logout, updateUser, googleLogin }}>
       {children}
     </AuthContext.Provider>
   );

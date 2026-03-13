@@ -1,6 +1,7 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { Toaster } from 'react-hot-toast';
 import { AuthProvider } from './context/AuthContext';
+import { GoogleOAuthProvider } from '@react-oauth/google';
 import { useState } from 'react';
 
 // Components
@@ -36,8 +37,9 @@ function App() {
   const [isAIChatOpen, setIsAIChatOpen] = useState(false);
 
   return (
-    <AuthProvider>
-      <Router>
+    <GoogleOAuthProvider clientId={import.meta.env.VITE_GOOGLE_CLIENT_ID || 'your-google-client-id.googleusercontent.com'}>
+      <AuthProvider>
+        <Router>
         {/* Floating AI Chat Button */}
         <button
           onClick={() => setIsAIChatOpen(true)}

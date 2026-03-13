@@ -1,12 +1,12 @@
- import { useState } from 'react';
+import { useState } from 'react';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
-import { useAuth } from '../context/AuthContext';
+import { useAuth, GoogleLogin } from '../context/AuthContext';
 import toast from 'react-hot-toast';
 
 const Login = () => {
   const navigate = useNavigate();
   const location = useLocation();
-  const { login } = useAuth();
+  const { login, googleLogin } = useAuth();
   
   const [formData, setFormData] = useState({
     email: '',
@@ -113,6 +113,39 @@ const Login = () => {
               </Link>
             </p>
           </div>
+        </div>
+
+        <div className="mt-4 text-center">
+          <p className="text-sm text-gray-500 mb-4">Or continue with</p>
+          <GoogleLogin
+            onSuccess={async (credentialResponse) => {
+              try {
+                await googleLogin(credentialResponse);
+                toast.success('Google login successful!');
+                // Redirect logic
+                const savedUser = localStorage.getItem('user');
+                const user = savedUser ? JSON.parse(savedUser) : null;
+                if (user?.role === 'admin') {
+                  navigate('/admin/dashboard');
+                } else if (user?.role === 'teacher') {
+                  navigate('/teacher/dashboard');
+                } else {
+                  navigate('/dashboard');
+                }
+              } catch (error) {
+                toast.error(error.response?.data?.message || 'Google login failed');
+              }
+            }}
+            onError={() => {
+              toast.error('Google login failed');
+            }}
+            theme="filled_blue"
+            size="large"
+            text="signin_with"
+            shape="rectangular"
+            width="100%"
+            className="w-full !bg-white !border-2 !border-gray-200 hover:!border-gray-300 h-12 rounded-xl font-medium shadow-sm hover:shadow-md transition-all"
+          />
         </div>
 
         {/* Demo Accounts */}

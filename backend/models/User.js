@@ -63,6 +63,11 @@ const userSchema = new mongoose.Schema({
     type: Boolean,
     default: true
   },
+  googleId: {
+    type: String,
+    sparse: true,
+    unique: true
+  },
   createdAt: {
     type: Date,
     default: Date.now

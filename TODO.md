@@ -1,41 +1,31 @@
-# Ankit Academy Platform Improvements
+# Google OAuth + Production Auth Fix - Implementation Steps
 
-## Task 1: Payment System Enhancements ✅
-- [x] Update CourseDetail.jsx - Add "Buy Course" button for paid courses
-- [x] Add PaymentModal with Razorpay integration (existing, enhanced)
-- [x] Add payment history section in student dashboard (MyPayments page)
-- [x] Create MyPayments page
+## ✅ Completed
+- [x] Analyzed current auth system
+- [x] Created TODO.md for tracking
 
-## Task 2: Live Interaction / Doubt Support ✅
-- [x] Create LiveClasses page for students
-- [x] Create CreateLiveClass component for teachers
-- [x] Add "Join Live Class" buttons
-- [x] Create Doubts page for Q&A
-- [x] Add routes in App.jsx
-- [x] Update Navbar with links
+## ✅ Completed Steps
+1. [x] Fix Production API URL - `frontend/src/services/api.js` (uses VITE_API_URL)
+2. [x] Update User Model - `backend/models/User.js` (googleId added)
+3. [x] Backend Dependencies - `backend/package.json` (google-auth-library ^9.6.2)
+4. [x] Google Auth Route - `backend/routes/googleAuth.js` + server.js integration (`POST /api/auth/google`)
+5. [x] Frontend Dependencies - `frontend/package.json` (@react-oauth/google ^0.12.1)
 
-## Task 3: Advanced Analytics ✅
-- [x] Backend: Add analytics routes (analytics.js)
-- [x] Frontend: Add analytics API endpoints in api.js
-- [x] Add teacher analytics endpoints (total students, engagement, lesson stats)
-- [x] Add student analytics enhancement (course completion %, quiz performance)
+## 🔄 Next Steps (Step 6/8)
+6. [ ] Google Login Button - Add to Login/Register pages
+7. [ ] AuthContext Update - Add `googleLogin` method
+8. [ ] Environment Setup - .env.example + CORS + Vercel config
 
-## Files Created:
-- frontend/src/pages/MyPayments.jsx
-- frontend/src/pages/LiveClasses.jsx
-- frontend/src/pages/Doubts.jsx
-- frontend/src/components/CreateLiveClass.jsx
-- backend/routes/analytics.js
+## Status
+**Backend Google OAuth complete** → `/api/auth/google` verifies ID token, creates/links users
 
-## Files Modified:
-- frontend/src/App.jsx (added routes)
-- frontend/src/components/Navbar.jsx (added menu items)
-- frontend/src/services/api.js (added analytics APIs)
-- frontend/src/pages/CourseDetail.jsx (Buy Course button)
-- backend/server.js (added analytics routes)
+**Next**: Add Google buttons to UI
 
-## How to Run:
-1. Start MongoDB
-2. Start backend: cd backend && npm start
-3. Start frontend: cd frontend && npm run dev
+## Status
+**Ready for Google OAuth backend route** → Verifies ID token, finds/creates user, returns JWT
+
+## Next Action
+**Update api.js** to use `VITE_API_URL` → Fixes localhost production issue immediately
+
+**Status**: Ready to implement. Will use placeholder `VITE_GOOGLE_CLIENT_ID=your-google-client-id.googleusercontent.com`
 
