@@ -76,7 +76,7 @@ edusmart/
 
 ### Prerequisites
 - Node.js (v18 or higher)
-- MongoDB (local or Atlas)
+- MongoDB Atlas (recommended for production)
 
 ### Backend Setup
 
@@ -199,11 +199,26 @@ After running the seed script, you can use these accounts:
 ## 📝 Environment Variables
 
 ### Backend (.env)
+Copy `backend/.env.example` to `backend/.env`
+
+Required:
 ```
+MONGODB_URI=mongodb+srv://user:pass@cluster.mongodb.net/ankitacademy?retryWrites=true&w=majority
+JWT_SECRET=your-64-char-super-secret-jwt-key-change-this
 PORT=5000
-MONGODB_URI=mongodb://localhost:27017/edusmart
-JWT_SECRET=your_secret_key_here
+FRONTEND_URL=http://localhost:5173
 ```
+
+### Frontend (.env)
+Copy `frontend/.env.example` to `frontend/.env.local`
+
+```
+VITE_API_URL=http://localhost:5000/api
+```
+
+### Vercel Env Vars
+Frontend: `VITE_API_URL=https://your-backend.vercel.app/api`
+Backend: `MONGODB_URI`, `JWT_SECRET`, `FRONTEND_URL=https://frontend-nu-virid-37.vercel.app`
 
 ## 🚀 Building for Production
 

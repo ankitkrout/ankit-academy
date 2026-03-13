@@ -1,31 +1,35 @@
-# Google OAuth + Production Auth Fix - Implementation Steps
+# Vercel Deployment Fix - Progress Tracker
 
-## ✅ Completed
-- [x] Analyzed current auth system
-- [x] Created TODO.md for tracking
+## Phase 1: Code & Config Fixes ✅ In Progress
 
-## ✅ Completed Steps
-1. [x] Fix Production API URL - `frontend/src/services/api.js` (uses VITE_API_URL)
-2. [x] Update User Model - `backend/models/User.js` (googleId added)
-3. [x] Backend Dependencies - `backend/package.json` (google-auth-library ^9.6.2)
-4. [x] Google Auth Route - `backend/routes/googleAuth.js` + server.js integration (`POST /api/auth/google`)
-5. [x] Frontend Dependencies - `frontend/package.json` (@react-oauth/google ^0.12.1)
+- [x] Create TODO.md
+- [x] Create frontend/.env.example
+- [x] Create backend/.env.example  
+- [x] Update backend/server.js (CORS + MongoDB env)
+- [ ] Fix backend/seed.js (MongoDB env)
+- [x] Disable backend/test-api.js
+- [x] Create root vercel.json (monorepo config)
+- [x] Create frontend/vercel.json (Vite preset)
+- [x] Update README.md (deployment guide)
+- [ ] Commit & push all changes
+- [ ] Test local build: `cd frontend && npm run build`
 
-## 🔄 Next Steps (Step 6/8)
-6. [ ] Google Login Button - Add to Login/Register pages
-7. [ ] AuthContext Update - Add `googleLogin` method
-8. [ ] Environment Setup - .env.example + CORS + Vercel config
+## Phase 2: Vercel Setup (Manual)
 
-## Status
-**Backend Google OAuth complete** → `/api/auth/google` verifies ID token, creates/links users
+- [ ] Add env vars to Vercel Dashboard:
+  | Name | Value |
+  |------|-------|
+  | `VITE_API_URL` | `https://your-backend-api.com/api` (update after backend deploy) |
+- [ ] Redeploy frontend project
+- [ ] Verify: Test login at https://frontend-nu-virid-37.vercel.app/login
 
-**Next**: Add Google buttons to UI
+## Phase 3: Backend Deploy (Later)
 
-## Status
-**Ready for Google OAuth backend route** → Verifies ID token, finds/creates user, returns JWT
+- [ ] Deploy backend to Vercel/Heroku/Render
+- [ ] Add MONGODB_URI, JWT_SECRET, FRONTEND_URL
+- [ ] Update VITE_API_URL to real backend URL
+- [ ] Test end-to-end
 
-## Next Action
-**Update api.js** to use `VITE_API_URL` → Fixes localhost production issue immediately
+**Next Action**: Complete Phase 1 → Auto-trigger Vercel redeploy on push.
 
-**Status**: Ready to implement. Will use placeholder `VITE_GOOGLE_CLIENT_ID=your-google-client-id.googleusercontent.com`
-
+**Status**: Working...

@@ -10,7 +10,7 @@ const Course = require('./models/Course');
 const Lesson = require('./models/Lesson');
 const Quiz = require('./models/Quiz');
 
-const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost:27017/edusmart';
+const MONGODB_URI = process.env.MONGODB_URI;
 
 const seedData = async () => {
   try {

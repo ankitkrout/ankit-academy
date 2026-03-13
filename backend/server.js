@@ -33,14 +33,14 @@ const app = express();
 const allowedOrigins = [
   'http://localhost:5173',
   'http://localhost:3000',
-  'https://your-project.vercel.app',
+  'https://frontend-nu-virid-37.vercel.app',
   process.env.FRONTEND_URL
 ].filter(Boolean);
 
 const corsOptions = {
   origin: function (origin, callback) {
     // Allow requests with no origin (like mobile apps or curl requests)
-    if (!origin || allowedOrigins.includes(origin)) {
+    if (!origin || allowedOrigins.includes(origin) || (origin && origin.includes('vercel.app'))) {
       callback(null, true);
     } else {
       callback(new Error('Not allowed by CORS'));
@@ -102,7 +102,7 @@ app.use((req, res) => {
 
 // Connect to MongoDB and start server
 const PORT = process.env.PORT || 5000;
-const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://127.0.0.1:27017/ankitacademy';
+const MONGODB_URI = process.env.MONGODB_URI;
 
 mongoose.connect(MONGODB_URI)
   .then(() => {
